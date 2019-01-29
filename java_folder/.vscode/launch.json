@@ -5,12 +5,6 @@
             "name": "CodeLens (Launch) - ReceiptGenerator",
             "request": "launch",
             "mainClass": "ReceiptGenerator"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Hello",
-            "request": "launch",
-            "mainClass": "Hello"
         }
     ]
 }
