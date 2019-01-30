@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class ReceiptGenerator{
     public static void main(String[] args) throws IOException {
-        Scanner fromFile = new Scanner(new File("Items.txt")).useDelimiter("\\s");
+        Scanner fromFile = new Scanner(new File("Items.txt")).useDelimiter("\\s*");
         List<String> tempItems = new ArrayList<String>();
         while (fromFile.hasNext()) {
             tempItems.add(fromFile.nextLine());
