@@ -1,5 +1,5 @@
 ## Receipt Generator
-#Instructions for Use
+# Instructions for Use
 * List items in the Items.txt file in the following format:
 
 1 _______ at ##.##
@@ -14,7 +14,7 @@ For an imported picture frame that costs $8.99, a graphic t-shirt that costs $12
 1 coloring book at 5.00
 ```
 
-#Assumptions
+# Assumptions
 * You will only be purchasing 1 of any given item
 * Any food item will have the word "chocolate" in it
 * Any medications will have the word "pills" in it
@@ -22,10 +22,10 @@ For an imported picture frame that costs $8.99, a graphic t-shirt that costs $12
 * Anything that is imported will be taxed an additional 5%
 * The sales tax rounding rule is as follows: for a tax rate of n%, a shelf price of p will be taxed at (np/100 rounded up to the nearest 0.05)
 
-#Design
+# Design
 The code works by scanning each item for the word "imported" as well as checking for any of the exception words (in this case: "chocolate", "pills", or "book") are present. Based on what it finds, it categorizes the item into 1 of 4 categories (imported and exempt, imported and non-exempt, non-imported and exempt, and non-imported and non-exempt). Finally, the item's shelf price is parsed as a number and its sales tax is calculated according to its category.
 
-#Future Versions
+# Future Versions
 * You should be able to purchase more than just 1 of a given item
 * The exempt categories will be more robust (each its own array/list filled with items) rather than just searching for 3 key words
 * The tax rates for each category should be up to the user rather than hard coded
