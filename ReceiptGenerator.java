@@ -17,21 +17,21 @@ public class ReceiptGenerator{
         loopThruItems(itemArray);
     }
 
-    private static void loopThruItems(String[] args) { 
+    private static void loopThruItems(String[] itemsArray) { 
         DecimalFormat moneyPattern = new DecimalFormat("##0.00");
         List<String> exceptionsList = Arrays.asList("book", "chocolate", "pills");
-        Double[] taxesArray = new Double[args.length];
-        Double[] totalsArray = new Double[args.length];
-        for (int i = 0; i < args.length; i++) {           
-            if (args[i].contains("imported") && (stringContainsItemFromList(args[i], exceptionsList))) {
-                calculateSalesTax(args[i], 5, i, taxesArray, totalsArray);
+        double[] taxesArray = new double[itemsArray.length];
+        double[] totalsArray = new double[itemsArray.length];
+        for (int i = 0; i < itemsArray.length; i++) {           
+            if (itemsArray[i].contains("imported") && (stringContainsItemFromList(itemsArray[i], exceptionsList))) {
+                calculateSalesTax(itemsArray[i], 5, i, taxesArray, totalsArray);
             }
-            else if (args[i].contains("imported")) {
-                calculateSalesTax(args[i], 15, i, taxesArray, totalsArray);
-            }else if (stringContainsItemFromList(args[i], exceptionsList)) {
-                calculateSalesTax(args[i], 0, i, taxesArray, totalsArray);
+            else if (itemsArray[i].contains("imported")) {
+                calculateSalesTax(itemsArray[i], 15, i, taxesArray, totalsArray);
+            }else if (stringContainsItemFromList(itemsArray[i], exceptionsList)) {
+                calculateSalesTax(itemsArray[i], 0, i, taxesArray, totalsArray);
             }else{
-                calculateSalesTax(args[i], 10, i, taxesArray, totalsArray);
+                calculateSalesTax(itemsArray[i], 10, i, taxesArray, totalsArray);
             }
         }
         double totalTaxes = 0.0;
@@ -47,7 +47,7 @@ public class ReceiptGenerator{
         System.out.println("Sales Taxes: "+(moneyPattern.format(roundedTotalTaxes)));
         System.out.println("Total: "+(moneyPattern.format(roundedTotalCost)));
     }
-    private static void calculateSalesTax(String s, int tax, int i, Double[] taxesArray, Double[] totalsArray) {
+    private static void calculateSalesTax(String s, int tax, int i, double[] taxesArray, double[] totalsArray) {
         DecimalFormat moneyPattern = new DecimalFormat("##0.00");
         double pricePreTax = Double.parseDouble(s.substring(s.indexOf(" at ") + 4, s.length()));
         double taxBeforeRound = (pricePreTax * tax) / 100;
