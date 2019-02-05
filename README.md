@@ -6,17 +6,24 @@ This application takes in a list of items and their shelf prices, calculates the
 ### Instructions for Use
 * List items in the Items.txt file in the following format:
 
-1 _______ at ##.##
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>1 _______ at ##.##</code>
 
-Example:
-
-For an imported picture frame that costs $8.99, a graphic t-shirt that costs $12.50, and a coloring book that costs $5, you would enter:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: For an imported picture frame that costs $8.99, a graphic t-shirt that costs $12.50, and a coloring book that costs $5, you would enter:
 
 ```
 1 imported picture frame at 8.99
 1 graphic t-shirt at 12.50
 1 coloring book at 5.00
 ```
+
+* Save the Items.txt file
+
+* In the project directory, run the following 2 commands:
+
+1. <code>$ javac ReceiptGenerator.java</code>
+
+2. <code>$ java ReceiptGenerator</code>
+
 
 ### Assumptions
 * You will only be purchasing 1 of any given item
